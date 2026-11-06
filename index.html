@@ -1,29 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#7545db">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Данила — личный блог об увлечениях</title>
   <meta name="description" content="Личный блог Данилы: скалодром, игры на ПК, пайка и компьютеры. Немного обо мне и о том, что мне интересно.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:title" content="Данила. По ту сторону экрана">
-  <meta property="og:description" content="Скалодром, игры, пайка и компьютеры. Личный блог о том, что мне интересно.">
+  <meta name="theme-color" content="#7545db">
+  <meta property="og:title" content="Данила — личный блог об увлечениях">
+  <meta property="og:description" content="Личный блог Данилы: скалодром, игры на ПК, пайка и компьютеры. Немного обо мне и о том, что мне интересно.">
   <meta property="og:image" content="https://damila-alt-glitch.github.io/danila-blog/img/social.png">
-  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/blog.js" defer></script>
-  <script src="js/carousel.js" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Перейти к содержимому</a>
-  <header class="site-header"><a class="brand" href="index.html" aria-label="Данила — на главную"><span class="brand-mark">д.</span><span>данила<span class="brand-dot"> / </span>блог</span></a><nav class="desktop-nav" aria-label="Основная навигация"><a href="index.html" aria-current="page">Главная</a><a href="interests.html">Интересы</a><a href="recommendations.html">Рекомендации</a><a href="places.html">Мастерская</a><a href="favorite.html">Фаворит</a></nav><a class="header-link" href="https://github.com/damila-alt-glitch" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button></header><nav class="mobile-menu" id="mobile-menu" aria-label="Мобильная навигация" hidden><a href="index.html" aria-current="page">Главная</a><a href="interests.html">Интересы</a><a href="recommendations.html">Рекомендации</a><a href="places.html">Мастерская</a><a href="favorite.html">Фаворит</a></nav>
+  <!-- Л7–Л8: горизонтальное меню на Flexbox. Л14: переключение класса. -->
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">д.</span> данила / блог</a>
+    <button type="button" id="menu-button" onclick="openMenu()">Меню</button>
+    <nav class="main-menu" id="main-menu" aria-label="Основная навигация">
+        <a href="index.html" class="active" onclick="closeMenu()">Главная</a>
+        <a href="interests.html" onclick="closeMenu()">Интересы</a>
+        <a href="recommendations.html" onclick="closeMenu()">Рекомендации</a>
+        <a href="places.html" onclick="closeMenu()">Мастерская</a>
+        <a href="favorite.html" onclick="closeMenu()">Фаворит</a>
+    </nav>
+  </header>
   <main id="main">
+
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow"><span class="little-star" aria-hidden="true">✳</span> Личный блог. Без лишнего шума.</p>
@@ -35,48 +39,72 @@
       </div>
       <div class="hero-visual">
         <div class="visual-label"><span class="status-dot"></span> В режиме любопытства <span>01 / 04</span></div>
-        <img src="img/world.svg" width="620" height="580" alt="Иллюстрация увлечений Данилы: скалодром, компьютер, игровой контроллер и электронная плата" fetchpriority="high">
+        <img src="img/world.svg" width="620" height="580" alt="Иллюстрация увлечений Данилы: скалодром, компьютер, игровой контроллер и электронная плата">
         <div class="visual-caption"><span>Четыре увлечения.<br><strong>Один любопытный человек.</strong></span><span class="caption-symbol" aria-hidden="true">↗</span></div>
       </div>
     </section>
 
     <section class="journal section wrap" id="journal" aria-labelledby="journal-title">
       <div class="section-heading"><div><p class="eyebrow">Личный журнал / 01</p><h2 id="journal-title">То, что мне интересно</h2></div><p class="section-note">Знакомство, любимые занятия<br>и немного мыслей вслух.</p></div>
-      <div class="filters" role="group" aria-label="Фильтр записей по теме"><button type="button" class="filter active" data-filter="all" aria-pressed="true">Все записи <span>4</span></button><button type="button" class="filter" data-filter="life" aria-pressed="false">Личное</button><button type="button" class="filter" data-filter="climbing" aria-pressed="false">Скалодром</button><button type="button" class="filter" data-filter="gaming" aria-pressed="false">Игры на ПК</button><button type="button" class="filter" data-filter="tech" aria-pressed="false">Мастерская</button></div>
+      <div class="filters" role="group" aria-label="Фильтр записей по теме"><button type="button" class="filter active" onclick="filterPosts('all', 0)">Все записи <span>4</span></button><button type="button" class="filter" onclick="filterPosts('life', 1)">Личное</button><button type="button" class="filter" onclick="filterPosts('climbing', 2)">Скалодром</button><button type="button" class="filter" onclick="filterPosts('gaming', 3)">Игры на ПК</button><button type="button" class="filter" onclick="filterPosts('tech', 4)">Мастерская</button></div>
       <p class="sr-only" id="filter-status" role="status" aria-live="polite">Показаны все записи: 4</p>
       <div class="posts-grid">
-        <article class="post-card featured" data-topic="life">
-          <a class="post-cover cover-intro" href="#post-hello" data-post="hello" aria-label="Читать: Давай знакомиться. Я Данила"><span class="cover-small">ЗНАКОМСТВО</span><span class="cover-hello">Привет<span>!</span></span><span class="cover-sticker">это мой блог ↗</span><span class="cover-number">01</span></a>
+        <article class="post-card featured life">
+          <a class="post-cover cover-intro" href="#about" aria-label="Читать: Давай знакомиться. Я Данила"><span class="cover-small">ЗНАКОМСТВО</span><span class="cover-hello">Привет<span>!</span></span><span class="cover-sticker">это мой блог ↗</span><span class="cover-number">01</span></a>
           <div class="post-meta"><span class="category">Личное</span><span>6 ноября 2026</span><span>1 мин чтения</span></div>
-          <h3><a href="#post-hello" data-post="hello">Давай знакомиться.<br>Я Данила</a></h3><p>Немного обо мне и о четырёх занятиях, для которых всегда хочется найти время.</p><a class="read-link" href="#post-hello" data-post="hello">Читать запись <span aria-hidden="true">↗</span></a>
+          <h3><a href="#about">Давай знакомиться.<br>Я Данила</a></h3><p>Немного обо мне и о четырёх занятиях, для которых всегда хочется найти время.</p><a class="read-link" href="#about">Читать запись <span aria-hidden="true">↗</span></a>
         </article>
-        <article class="post-card" data-topic="climbing">
-          <a class="post-cover cover-climb" href="#post-climbing" data-post="climbing" aria-label="Читать: Выше экрана. Моё увлечение скалодромом"><img src="img/climbing.svg" width="600" height="360" alt="Абстрактная стена скалодрома с разноцветными зацепами" loading="lazy"><span class="cover-small">ВЫШЕ ЭКРАНА</span><span class="cover-number">02</span></a>
-          <div class="post-meta"><span class="category">Скалодром</span><span>1 мин чтения</span></div><h3><a href="#post-climbing" data-post="climbing">Задача, которую<br>решаешь всем телом</a></h3><p>Скалодром в моём списке увлечений. Немного о движении, маршрутах и новых попытках.</p><a class="read-link" href="#post-climbing" data-post="climbing">Читать запись <span aria-hidden="true">↗</span></a>
+        <article class="post-card climbing">
+          <a class="post-cover cover-climb" href="interests.html#climbing" aria-label="Читать: Выше экрана. Моё увлечение скалодромом"><img src="img/climbing.svg" width="600" height="360" alt="Абстрактная стена скалодрома с разноцветными зацепами"><span class="cover-small">ВЫШЕ ЭКРАНА</span><span class="cover-number">02</span></a>
+          <div class="post-meta"><span class="category">Скалодром</span><span>1 мин чтения</span></div><h3><a href="interests.html#climbing">Задача, которую<br>решаешь всем телом</a></h3><p>Скалодром в моём списке увлечений. Немного о движении, маршрутах и новых попытках.</p><a class="read-link" href="interests.html#climbing">Читать запись <span aria-hidden="true">↗</span></a>
         </article>
-        <article class="post-card" data-topic="gaming">
-          <a class="post-cover cover-game" href="#post-gaming" data-post="gaming" aria-label="Читать: Игры на ПК. Другой способ переключиться"><img src="img/gaming.svg" width="600" height="360" alt="Стилизованный игровой контроллер на фиолетовом фоне" loading="lazy"><span class="cover-small">ЕЩЁ ОДНА ПОПЫТКА</span><span class="cover-number">03</span></a>
-          <div class="post-meta"><span class="category">Игры на ПК</span><span>1 мин чтения</span></div><h3><a href="#post-gaming" data-post="gaming">Другой способ<br>переключиться</a></h3><p>Игры как одно из моих хобби. Отдельное место для виртуальных миров и интересных задач.</p><a class="read-link" href="#post-gaming" data-post="gaming">Читать запись <span aria-hidden="true">↗</span></a>
+        <article class="post-card gaming">
+          <a class="post-cover cover-game" href="interests.html#gaming" aria-label="Читать: Игры на ПК. Другой способ переключиться"><img src="img/gaming.svg" width="600" height="360" alt="Стилизованный игровой контроллер на фиолетовом фоне"><span class="cover-small">ЕЩЁ ОДНА ПОПЫТКА</span><span class="cover-number">03</span></a>
+          <div class="post-meta"><span class="category">Игры на ПК</span><span>1 мин чтения</span></div><h3><a href="interests.html#gaming">Другой способ<br>переключиться</a></h3><p>Игры как одно из моих хобби. Отдельное место для виртуальных миров и интересных задач.</p><a class="read-link" href="interests.html#gaming">Читать запись <span aria-hidden="true">↗</span></a>
         </article>
-        <article class="post-card featured" data-topic="tech">
-          <a class="post-cover cover-tech" href="#post-workshop" data-post="workshop" aria-label="Читать: Пайка и компьютеры. Интересно, что внутри"><img src="img/workshop.svg" width="600" height="360" alt="Рисунок электронной платы с микросхемой и дорожками" loading="lazy"><span class="cover-small">НА РАБОЧЕМ СТОЛЕ</span><span class="cover-number">04</span></a>
-          <div class="post-meta"><span class="category">Мастерская</span><span>1 мин чтения</span></div><h3><a href="#post-workshop" data-post="workshop">Интересно,<br>что внутри</a></h3><p>Люблю паять и заниматься компьютерами. Здесь начинается техническая часть моего блога.</p><a class="read-link" href="#post-workshop" data-post="workshop">Читать запись <span aria-hidden="true">↗</span></a>
+        <article class="post-card featured tech">
+          <a class="post-cover cover-tech" href="places.html" aria-label="Читать: Пайка и компьютеры. Интересно, что внутри"><img src="img/workshop.svg" width="600" height="360" alt="Рисунок электронной платы с микросхемой и дорожками"><span class="cover-small">НА РАБОЧЕМ СТОЛЕ</span><span class="cover-number">04</span></a>
+          <div class="post-meta"><span class="category">Мастерская</span><span>1 мин чтения</span></div><h3><a href="places.html">Интересно,<br>что внутри</a></h3><p>Люблю паять и заниматься компьютерами. Здесь начинается техническая часть моего блога.</p><a class="read-link" href="places.html">Читать запись <span aria-hidden="true">↗</span></a>
         </article>
       </div>
-      <noscript><p class="notice">Для фильтрации и чтения полных записей включите JavaScript. Описание увлечений и раздел обо мне доступны ниже.</p></noscript>
+      
     </section>
 
-<section class="carousel-section section wrap" aria-labelledby="gallery-title"><div class="section-heading"><div><p class="eyebrow">В кадре</p><h2 id="gallery-title">Маленькая галерея интересов</h2></div><p class="section-note">Листай четыре стороны<br>моего мира.</p></div><div class="carousel" role="region" aria-roledescription="карусель" aria-label="Иллюстрации моих увлечений" tabindex="0"><div class="carousel-image"><img id="slide-image" src="img/climbing.svg" width="600" height="360" loading="lazy" alt="Стена скалодрома с разноцветными зацепами"></div><div class="carousel-copy"><p class="eyebrow" id="slide-number">01 / 04</p><h3 id="slide-title">Немного выше</h3><p id="slide-description">Скалодром. Задача, которую решаешь всем телом.</p><div class="carousel-controls"><button type="button" id="slide-prev" class="round-button" aria-label="Предыдущее изображение">←</button><div class="slide-dots" role="group" aria-label="Выбор изображения"><button type="button" data-slide="0" aria-label="Показать скалодром" aria-current="true"></button><button type="button" data-slide="1" aria-label="Показать игры на ПК"></button><button type="button" data-slide="2" aria-label="Показать мастерскую"></button><button type="button" data-slide="3" aria-label="Показать все увлечения"></button></div><button type="button" id="slide-next" class="round-button" aria-label="Следующее изображение">→</button></div><p id="slide-status" class="sr-only" role="status" aria-live="polite">Изображение 1 из 4. Скалодром.</p></div></div></section>
+
+    <!-- Л13–Л14: массив элементов, цикл for и style.display. -->
+    <section class="section wrap" aria-labelledby="gallery-title">
+      <div class="section-heading"><div><p class="eyebrow">В кадре</p><h2 id="gallery-title">Маленькая галерея интересов</h2></div><p class="section-note">Четыре стороны моего мира.</p></div>
+      <div class="carousel">
+        <div class="slides">
+          <div class="slide"><img src="img/climbing.svg" alt="Стена скалодрома с разноцветными зацепами"><p>01 / Скалодром. Немного выше.</p></div>
+          <div class="slide"><img src="img/gaming.svg" alt="Игровой контроллер на фиолетовом фоне"><p>02 / Игры на ПК. По ту сторону экрана.</p></div>
+          <div class="slide"><img src="img/workshop.svg" alt="Плата с микросхемой и дорожками"><p>03 / Пайка. Внимание к мелким деталям.</p></div>
+          <div class="slide"><img src="img/world.svg" alt="Иллюстрация четырёх увлечений Данилы"><p>04 / Компьютеры и другие мои увлечения.</p></div>
+        </div>
+        <div class="carousel-copy"><p class="eyebrow">Мои увлечения</p><h3>У каждого занятия<br>свой характер.</h3><p>Скалодром, игры, пайка и компьютеры. Листай иллюстрации кнопками под описанием.</p><div class="carousel-controls"><button type="button" onclick="previousSlide()" aria-label="Предыдущее изображение">←</button><span id="slide-count" role="status">1 / 4</span><button type="button" onclick="nextSlide()" aria-label="Следующее изображение">→</button></div></div>
+      </div>
+    </section>
+
     <section class="tagline-section section" aria-label="Моя идея"><div class="wrap"><p class="eyebrow">Не останавливаться на знакомом</p><p class="tagline">Разобраться, как устроено.<br>Попробовать своими руками.</p><span class="tagline-star" aria-hidden="true">✳</span></div></section>
 
     <section class="interests section wrap" id="interests" aria-labelledby="interests-title"><div class="section-heading"><div><p class="eyebrow">Мои увлечения / 02</p><h2 id="interests-title">Четыре стороны меня</h2></div><p class="section-note">На стене, в игре<br>и за рабочим столом.</p></div>
-      <div class="interest-list"><a href="#post-climbing" data-post="climbing"><span class="interest-index">01</span><h3>Скалодром</h3><p>Движение. Маршруты. Новые попытки.</p><span aria-hidden="true">↗</span></a><a href="#post-gaming" data-post="gaming"><span class="interest-index">02</span><h3>Игры на ПК</h3><p>Виртуальные миры и смена обстановки.</p><span aria-hidden="true">↗</span></a><a href="#post-workshop" data-post="workshop"><span class="interest-index">03</span><h3>Пайка</h3><p>Мелкие детали и работа руками.</p><span aria-hidden="true">↗</span></a><a href="#post-workshop" data-post="workshop"><span class="interest-index">04</span><h3>Компьютеры</h3><p>Любопытство к тому, что под корпусом.</p><span aria-hidden="true">↗</span></a></div>
+      <div class="interest-list"><a href="interests.html#climbing"><span class="interest-index">01</span><h3>Скалодром</h3><p>Движение. Маршруты. Новые попытки.</p><span aria-hidden="true">↗</span></a><a href="interests.html#gaming"><span class="interest-index">02</span><h3>Игры на ПК</h3><p>Виртуальные миры и смена обстановки.</p><span aria-hidden="true">↗</span></a><a href="places.html"><span class="interest-index">03</span><h3>Пайка</h3><p>Мелкие детали и работа руками.</p><span aria-hidden="true">↗</span></a><a href="places.html"><span class="interest-index">04</span><h3>Компьютеры</h3><p>Любопытство к тому, что под корпусом.</p><span aria-hidden="true">↗</span></a></div>
     </section>
 
     <section class="about section wrap" id="about" aria-labelledby="about-title"><div class="about-portrait" aria-label="Графическая монограмма Данилы"><span class="portrait-kicker">ЧЕЛОВЕК ЗА БЛОГОМ</span><span class="portrait-letter" aria-hidden="true">д.</span><span class="portrait-bottom">ДАНИЛА <span>✳</span> 24 ГОДА</span></div><div class="about-copy"><p class="eyebrow">Обо мне / 03</p><h2 id="about-title">Просто я.<br>И то, что я люблю.</h2><p>Меня зовут Данила, мне 24 года. Я родился 30 мая. Мой любимый цвет — фиолетовый. Думаю, по этому сайту уже заметно.</p><p>Я люблю заниматься на скалодроме, играть на ПК, паять и разбираться с компьютерами. Этим увлечениям и посвящён мой блог.</p><p>Здесь можно познакомиться со мной через занятия, которые мне интересны.</p><a class="text-link" href="https://github.com/damila-alt-glitch" target="_blank" rel="noopener noreferrer">Мой профиль на GitHub <span aria-hidden="true">↗</span></a></div></section>
     <section class="closing wrap"><span aria-hidden="true">✳</span><div><p class="eyebrow">До следующей записи</p><h2>Любопытство продолжается.</h2></div><a href="#journal" class="primary-button">К записям <span aria-hidden="true">↗</span></a></section>
+  
+    <section class="site-info wrap" id="site-info"><h2>О сайте</h2><p>Личный блог Данилы об увлечениях. Сайт работает без регистрации, комментариев и форм отправки данных. Собственные счётчики посещений и cookies не используются. Внешние ссылки ведут на сторонние сайты; технические запросы обрабатывает хостинг GitHub Pages.</p><p>© 2026 Данила. При использовании материалов указывайте автора и ссылку на блог.</p></section>
+
   </main>
-  <footer class="site-footer wrap"><a class="brand" href="#top"><span class="brand-mark">д.</span><span>данила / блог</span></a><p>© 2026 Данила. Сделано с любопытством.</p><div><button class="footer-button" type="button" data-legal="privacy">Конфиденциальность</button><button class="footer-button" type="button" data-legal="terms">О материалах</button><a href="#top">Наверх ↑</a></div></footer>
-  <dialog id="reader" aria-labelledby="reader-title"><div class="reader-top"><span class="eyebrow" id="reader-category"></span><button type="button" class="close-reader" aria-label="Закрыть запись">Закрыть <span aria-hidden="true">×</span></button></div><article><h2 id="reader-title"></h2><p class="reader-meta" id="reader-meta"></p><div id="reader-content"></div></article><div class="reader-bottom"><span>Данила / личный блог</span><button type="button" class="close-reader text-link">Вернуться к блогу ↗</button></div></dialog>
+
+  <footer class="site-footer wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">д.</span> данила / блог</a>
+    <p>© 2026 Данила. Сделано с любопытством.</p>
+    <div><a href="index.html#site-info">О сайте</a><a href="https://github.com/damila-alt-glitch" target="_blank" rel="noopener">Мой GitHub ↗</a><a href="#top">Наверх ↑</a></div>
+  </footer>
+  <!-- Обычное подключение JavaScript в конце страницы: Л13. -->
+  <script src="js/blog.js"></script>
+<script src="js/carousel.js"></script>
 </body>
 </html>
