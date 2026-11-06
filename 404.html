@@ -16,7 +16,7 @@
   <a class="skip-link" href="#main">Перейти к содержимому</a>
   <!-- Л7–Л8: горизонтальное меню на Flexbox. Л14: переключение класса. -->
   <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark">д.</span> данила / блог</a>
+    <a class="brand" href="index.html">данила / блог</a>
     <button type="button" id="menu-button" onclick="openMenu()">Меню</button>
     <nav class="main-menu" id="main-menu" aria-label="Основная навигация">
         <a href="index.html" onclick="closeMenu()">Главная</a>
@@ -24,17 +24,14 @@
         <a href="recommendations.html" onclick="closeMenu()">Рекомендации</a>
         <a href="places.html" onclick="closeMenu()">Мастерская</a>
         <a href="favorite.html" onclick="closeMenu()">Фаворит</a>
-    </nav>
+            <a href="game.html" onclick="closeMenu()">Игра</a>
+</nav>
   </header>
   <main id="main">
 <section class="wrap page-hero error-page"><p class="eyebrow">404 / Не тот маршрут</p><h1>Кажется,<br>здесь пусто.</h1><p class="page-intro">Такой страницы нет. На главной всё на месте: увлечения, записи и немного фиолетового.</p><a class="primary-button" href="https://damila-alt-glitch.github.io/danila-blog/">На главную ↗</a></section>
   </main>
 
-  <footer class="site-footer wrap">
-    <a class="brand" href="index.html"><span class="brand-mark">д.</span> данила / блог</a>
-    <p>© 2026 Данила. Сделано с любопытством.</p>
-    <div><a href="index.html#site-info">О сайте</a><a href="credits.html">Источники изображений</a><a href="https://github.com/damila-alt-glitch" target="_blank" rel="noopener">Мой GitHub ↗</a><a href="#top">Наверх ↑</a></div>
-  </footer>
+  
   <!-- Обычное подключение JavaScript в конце страницы: Л13. -->
   <script src="js/blog.js"></script>
 

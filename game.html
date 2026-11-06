@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Игра — блог Данилы</title>
+  <meta name="description" content="Игра «Динозаврик и кактус» в блоге Данилы: прыжок, счёт и перезапуск.">
+  <meta name="theme-color" content="#7545db">
+  <meta property="og:title" content="Игра — блог Данилы">
+  <meta property="og:description" content="Скалодром, игры на ПК, пайка и компьютеры. Игра «Динозаврик и кактус» по материалам Л15.">
+  <meta property="og:image" content="https://damila-alt-glitch.github.io/danila-blog/img/social.png">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css?v=angular-20261106">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <!-- Л7–Л8: горизонтальное меню на Flexbox. Л14: переключение класса. -->
+  <header class="site-header">
+    <a class="brand" href="index.html">данила / блог</a>
+    <button type="button" id="menu-button" onclick="openMenu()">Меню</button>
+    <nav class="main-menu" id="main-menu" aria-label="Основная навигация">
+        <a href="index.html" onclick="closeMenu()">Главная</a>
+        <a href="interests.html" onclick="closeMenu()">Интересы</a>
+        <a href="recommendations.html" onclick="closeMenu()">Рекомендации</a>
+        <a href="places.html" onclick="closeMenu()">Мастерская</a>
+        <a href="favorite.html" onclick="closeMenu()">Фаворит</a>
+            <a href="game.html" class="active" onclick="closeMenu()">Игра</a>
+</nav>
+  </header>
+  <main id="main"><section class="page-hero wrap"><a class="breadcrumb" href="index.html">Главная / Игра</a><p class="eyebrow">Небольшой перерыв</p><h1>Динозаврик<br>и кактус.</h1><p class="page-intro">Перепрыгивай кактус, набирай очки и попробуй продержаться дольше.</p></section><section class="game-section section" id="game" aria-labelledby="game-title">
+      <div class="wrap game-layout">
+        <div class="game-intro">
+          <p class="eyebrow">Поиграем? / JavaScript</p>
+          <h2 id="game-title">Динозаврик<br>и кактус</h2>
+          <p>Маленькая игра про вовремя сделанный прыжок. Помоги фиолетовому динозаврику перепрыгивать кактус.</p>
+          <ol><li>Нажми «Начать игру».</li><li>Перед кактусом нажми «Прыгнуть» или любую буквенную клавишу.</li><li>Продержись как можно дольше. Столкновение завершает игру.</li></ol>
+          <p>Счёт растёт во время игры. После столкновения можно начать заново.</p>
+        </div>
+        <div class="game-panel">
+          <div class="game-stats"><p>Твой счёт</p><strong id="game-score">0</strong></div>
+          <div id="game-field" class="game-field" aria-label="Игровое поле с динозавриком и кактусом">
+            <p class="game-sky-label">ПРОБУЙ. ПРЫГАЙ. ПОВТОРЯЙ.</p>
+            <div id="dino" aria-label="Динозаврик"></div>
+            <div id="cactus" aria-label="Кактус"></div>
+            <div class="game-ground"></div>
+          </div>
+          <div class="game-actions"><button class="primary-button" id="game-start" type="button" onclick="startGame()">Начать игру ↗</button><button class="secondary-button" id="game-jump" type="button" onclick="jump()">Прыгнуть ↑</button></div>
+          <p id="game-status" role="status">Нажми «Начать игру», когда будешь готов.</p>
+        </div>
+      </div>
+    </section></main>
+
+  
+  <!-- Обычное подключение JavaScript в конце страницы: Л13. -->
+  <script src="js/blog.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

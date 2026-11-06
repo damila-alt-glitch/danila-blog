@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Мои интересы — блог Данилы</title>
-  <meta name="description" content="Скалодром, игры на ПК, пайка и компьютеры. Игра «Динозаврик и кактус» по материалам Л15.">
+  <meta name="description" content="Скалодром, игры на ПК, пайка и компьютеры. Игра находится на отдельной странице.">
   <meta name="theme-color" content="#7545db">
   <meta property="og:title" content="Мои интересы — блог Данилы">
-  <meta property="og:description" content="Скалодром, игры на ПК, пайка и компьютеры. Игра «Динозаврик и кактус» по материалам Л15.">
+  <meta property="og:description" content="Скалодром, игры на ПК, пайка и компьютеры. Игра находится на отдельной странице.">
   <meta property="og:image" content="https://damila-alt-glitch.github.io/danila-blog/img/social.png">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css?v=angular-20261106">
@@ -16,7 +16,7 @@
   <a class="skip-link" href="#main">Перейти к содержимому</a>
   <!-- Л7–Л8: горизонтальное меню на Flexbox. Л14: переключение класса. -->
   <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark">д.</span> данила / блог</a>
+    <a class="brand" href="index.html">данила / блог</a>
     <button type="button" id="menu-button" onclick="openMenu()">Меню</button>
     <nav class="main-menu" id="main-menu" aria-label="Основная навигация">
         <a href="index.html" onclick="closeMenu()">Главная</a>
@@ -24,43 +24,19 @@
         <a href="recommendations.html" onclick="closeMenu()">Рекомендации</a>
         <a href="places.html" onclick="closeMenu()">Мастерская</a>
         <a href="favorite.html" onclick="closeMenu()">Фаворит</a>
-    </nav>
+            <a href="game.html" onclick="closeMenu()">Игра</a>
+</nav>
   </header>
   <main id="main">
 <section class="page-hero wrap"><a href="index.html" class="breadcrumb">Главная <span aria-hidden="true">/</span> Мои интересы</a><p class="eyebrow">Данила / Мои интересы</p><h1>Любопытство<br>в четырёх направлениях.</h1><p class="page-intro">Движение, виртуальные миры и работа руками. Вот занятия, которым посвящён мой блог.</p></section><section class="wrap interest-cards section" aria-label="Четыре увлечения"><article class="interest-card" id="climbing"><img src="img/real/climbing.jpg" alt="Фото по теме: Скалодром" width="600" height="360"><div><p class="eyebrow">01 / Движение</p><h2>Скалодром</h2><p>На скалодроме я занимаюсь тем, что совсем не похоже на работу за компьютером. Маршрут превращается в задачу: выбрать зацепку, перенести вес и найти следующее движение.</p><p class="card-note">Здесь главное — движение и внимание к маршруту.</p></div></article><article class="interest-card" id="gaming"><img src="img/real/keyboard.jpg" alt="Фото по теме: Игры на ПК" width="600" height="360"><div><p class="eyebrow">02 / По ту сторону экрана</p><h2>Игры на ПК</h2><p>Я люблю играть на компьютере. Игры дают отдельное пространство для исследования миров, освоения механик и решения задач. Этой части моих интересов тоже нашлось место в блоге.</p><p class="card-note">Игровые впечатления заслуживают собственных заметок.</p></div></article><article class="interest-card" id="solder"><img src="img/real/electronics.jpg" alt="Фото по теме: Пайка" width="600" height="360"><div><p class="eyebrow">03 / Работа руками</p><h2>Пайка</h2><p>Мне нравится паять. За внешним видом устройства скрываются компоненты и соединения, и пайка позволяет заниматься этой частью техники своими руками.</p><p class="card-note">Мелкие детали — часть большой схемы.</p></div></article><article class="interest-card" id="computers"><img src="img/real/computer.jpg" alt="Фото по теме: Компьютеры" width="600" height="360"><div><p class="eyebrow">04 / Техника</p><h2>Компьютеры</h2><p>Я люблю заниматься компьютерами. Интересно, как отдельные компоненты складываются в работающую систему и как программная часть связана с железом.</p><p class="card-note">Снаружи — привычный экран. Внутри — целый мир.</p></div></article></section>
     <!-- Л15: игра «Динозаврик и кактус». Движение — CSS animation. -->
-    <section class="game-section section" id="game" aria-labelledby="game-title">
-      <div class="wrap game-layout">
-        <div class="game-intro">
-          <p class="eyebrow">Поиграем? / JavaScript</p>
-          <h2 id="game-title">Динозаврик<br>и кактус</h2>
-          <p>Маленькая игра про вовремя сделанный прыжок. Помоги фиолетовому динозаврику перепрыгивать кактус.</p>
-          <ol><li>Нажми «Начать игру».</li><li>Перед кактусом нажми «Прыгнуть» или любую буквенную клавишу.</li><li>Продержись как можно дольше. Столкновение завершает игру.</li></ol>
-          <p>Счёт растёт во время игры. После столкновения можно начать заново.</p>
-        </div>
-        <div class="game-panel">
-          <div class="game-stats"><p>Твой счёт</p><strong id="game-score">0</strong></div>
-          <div id="game-field" class="game-field" aria-label="Игровое поле с динозавриком и кактусом">
-            <p class="game-sky-label">ПРОБУЙ. ПРЫГАЙ. ПОВТОРЯЙ.</p>
-            <div id="dino" aria-label="Динозаврик"></div>
-            <div id="cactus" aria-label="Кактус"></div>
-            <div class="game-ground"></div>
-          </div>
-          <div class="game-actions"><button class="primary-button" id="game-start" type="button" onclick="startGame()">Начать игру ↗</button><button class="secondary-button" id="game-jump" type="button" onclick="jump()">Прыгнуть ↑</button></div>
-          <p id="game-status" role="status">Нажми «Начать игру», когда будешь готов.</p>
-        </div>
-      </div>
-    </section>
+    
 <section class="closing wrap"><span aria-hidden="true">+</span><div><p class="eyebrow">Ещё немного обо мне</p><h2>У каждого увлечения своё место.</h2></div><a class="primary-button" href="places.html">В мастерскую ↗</a></section>
   </main>
 
-  <footer class="site-footer wrap">
-    <a class="brand" href="index.html"><span class="brand-mark">д.</span> данила / блог</a>
-    <p>© 2026 Данила. Сделано с любопытством.</p>
-    <div><a href="index.html#site-info">О сайте</a><a href="credits.html">Источники изображений</a><a href="https://github.com/damila-alt-glitch" target="_blank" rel="noopener">Мой GitHub ↗</a><a href="#top">Наверх ↑</a></div>
-  </footer>
+  
   <!-- Обычное подключение JavaScript в конце страницы: Л13. -->
   <script src="js/blog.js"></script>
-<script src="js/game.js"></script>
+
 </body>
 </html>

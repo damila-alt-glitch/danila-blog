@@ -16,7 +16,7 @@
   <a class="skip-link" href="#main">Перейти к содержимому</a>
   <!-- Л7–Л8: горизонтальное меню на Flexbox. Л14: переключение класса. -->
   <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark">д.</span> данила / блог</a>
+    <a class="brand" href="index.html">данила / блог</a>
     <button type="button" id="menu-button" onclick="openMenu()">Меню</button>
     <nav class="main-menu" id="main-menu" aria-label="Основная навигация">
         <a href="index.html" class="active" onclick="closeMenu()">Главная</a>
@@ -24,7 +24,8 @@
         <a href="recommendations.html" onclick="closeMenu()">Рекомендации</a>
         <a href="places.html" onclick="closeMenu()">Мастерская</a>
         <a href="favorite.html" onclick="closeMenu()">Фаворит</a>
-    </nav>
+            <a href="game.html" onclick="closeMenu()">Игра</a>
+</nav>
   </header>
   <main id="main">
 
@@ -94,15 +95,11 @@
     <section class="about section wrap" id="about" aria-labelledby="about-title"><div class="about-portrait" aria-label="Графическая монограмма Данилы"><span class="portrait-kicker">ЧЕЛОВЕК ЗА БЛОГОМ</span><span class="portrait-letter" aria-hidden="true">д.</span><span class="portrait-bottom">ДАНИЛА <span>+</span> 24 ГОДА</span></div><div class="about-copy"><p class="eyebrow">Обо мне / 03</p><h2 id="about-title">Просто я.<br>И то, что я люблю.</h2><p>Меня зовут Данила, мне 24 года. Я родился 30 мая. Мой любимый цвет — фиолетовый. Думаю, по этому сайту уже заметно.</p><p>Я люблю заниматься на скалодроме, играть на ПК, паять и разбираться с компьютерами. Этим увлечениям и посвящён мой блог.</p><p>Здесь можно познакомиться со мной через занятия, которые мне интересны.</p><a class="text-link" href="https://github.com/damila-alt-glitch" target="_blank" rel="noopener noreferrer">Мой профиль на GitHub <span aria-hidden="true">↗</span></a></div></section>
     <section class="closing wrap"><span aria-hidden="true">+</span><div><p class="eyebrow">До следующей записи</p><h2>Любопытство продолжается.</h2></div><a href="#journal" class="primary-button">К записям <span aria-hidden="true">↗</span></a></section>
   
-    <section class="site-info wrap" id="site-info"><h2>О сайте</h2><p>Личный блог Данилы об увлечениях. Сайт работает без регистрации, комментариев и форм отправки данных. Фотографии на сайте тематические, это не мои личные снимки. Собственные счётчики посещений и cookies не используются. Внешние ссылки ведут на сторонние сайты; технические запросы обрабатывает хостинг GitHub Pages.</p><p>© 2026 Данила. При использовании материалов указывайте автора и ссылку на блог.</p></section>
+    
 
   </main>
 
-  <footer class="site-footer wrap">
-    <a class="brand" href="index.html"><span class="brand-mark">д.</span> данила / блог</a>
-    <p>© 2026 Данила. Сделано с любопытством.</p>
-    <div><a href="index.html#site-info">О сайте</a><a href="credits.html">Источники изображений</a><a href="https://github.com/damila-alt-glitch" target="_blank" rel="noopener">Мой GitHub ↗</a><a href="#top">Наверх ↑</a></div>
-  </footer>
+  
   <!-- Обычное подключение JavaScript в конце страницы: Л13. -->
   <script src="js/blog.js"></script>
 <script src="js/carousel.js"></script>
