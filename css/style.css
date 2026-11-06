@@ -5,7 +5,7 @@
 
 body {
   margin: 0;
-  background: #f8f7fc;
+  background: #f6f6f6;
   color: #27212f;
   font-family: Verdana, sans-serif;
   font-size: 16px;
@@ -30,13 +30,13 @@ h2 { font-size: 36px; line-height: 40px; font-weight: 600; letter-spacing: -1px;
 /* Л4, Л7–Л8: позиционирование, Flexbox и меню. */
 .skip-link { position: absolute; top: -80px; left: 16px; padding: 12px; background: #7545db; color: white; z-index: 30; }
 .skip-link:focus { top: 0; }
-.site-header { position: relative; z-index: 10; width: 92%; max-width: 1200px; margin: 24px auto 0; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 24px; background: white; border: 1px solid #e4deed; border-radius: 16px; }
+.site-header { position: relative; z-index: 10; width: 92%; max-width: 1200px; margin: 24px auto 0; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 24px; background: white; border: 1px solid #e4deed; border-radius: 0; }
 .brand { position: relative; z-index: 21; display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: bold; }
-.brand-mark { width: 40px; height: 40px; background: #7545db; color: white; border-radius: 12px; text-align: center; font-size: 30px; line-height: 36px; }
+.brand-mark { width: 40px; height: 40px; background: #7545db; color: white; border-radius: 0; text-align: center; font-size: 30px; line-height: 36px; }
 .main-menu { display: flex; align-items: center; gap: 24px; }
 .main-menu a { padding: 8px 0; font-size: 14px; color: #756e80; }
 .main-menu a.active, .main-menu a:hover { color: #7545db; }
-#menu-button { display: none; position: relative; z-index: 21; border: 1px solid #e4deed; background: #eee8fa; border-radius: 8px; padding: 8px 12px; color: #7545db; font-size: 14px; }
+#menu-button { display: none; position: relative; z-index: 21; border: 1px solid #e4deed; background: #eee8fa; border-radius: 0; padding: 8px 12px; color: #7545db; font-size: 14px; }
 
 /* Л9–Л10: главная часть страницы и сетка карточек. */
 .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding-top: 64px; padding-bottom: 64px; }
@@ -46,7 +46,7 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
 .purple-dot { color: #7545db; }
 .hero-intro { margin-top: 32px; font-size: 24px; line-height: 32px; font-weight: bold; }
 .hero-description { max-width: 440px; margin-top: 16px; color: #756e80; font-size: 18px; line-height: 28px; }
-.primary-button, .secondary-button { display: inline-block; padding: 8px 12px; border: 1px solid #7545db; border-radius: 8px; background: #7545db; color: white; font-size: 16px; line-height: 24px; font-weight: bold; transition: background 0.3s, color 0.3s; }
+.primary-button, .secondary-button { display: inline-block; padding: 8px 12px; border: 1px solid #7545db; border-radius: 0; background: #7545db; color: white; font-size: 16px; line-height: 24px; font-weight: bold; transition: background 0.3s, color 0.3s; }
 .primary-button:hover { background: #6132be; color: white; }
 .secondary-button { background: white; color: #7545db; }
 .secondary-button:hover { background: #eae1fa; }
@@ -54,29 +54,29 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
 .hero .primary-button { margin-top: 32px; }
 .hero-footnote { display: flex; align-items: center; gap: 12px; max-width: 400px; margin-top: 32px; color: #756e80; font-size: 12px; line-height: 16px; }
 .small-line { width: 24px; height: 1px; background: #aca1be; }
-.hero-visual { padding: 24px; background: #eee8fa; border: 1px solid #e2d7f5; border-radius: 24px; }
+.hero-visual { padding: 24px; background: #eee8fa; border: 1px solid #e2d7f5; border-radius: 0; }
 .hero-visual img { width: 100%; margin-top: 16px; }
 .visual-label { display: flex; align-items: center; gap: 8px; color: #6b5b83; font-size: 12px; }
 .visual-label > span:last-child { margin-left: auto; }
-.status-dot { width: 8px; height: 8px; background: #7545db; border-radius: 50%; }
+.status-dot { width: 8px; height: 8px; background: #7545db; border-radius: 0; }
 .visual-caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 16px; font-size: 14px; color: #7c6b96; }
 .visual-caption strong { color: #453157; }
 .caption-symbol { color: #7545db; font-size: 30px; }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-.filter { padding: 8px 16px; border: 1px solid #e4deed; border-radius: 24px; color: #756e80; background: #f8f7fc; font-size: 14px; }
+.filter { padding: 8px 16px; border: 1px solid #e4deed; border-radius: 0; color: #756e80; background: #f6f6f6; font-size: 14px; }
 .filter:hover { background: #eae1fa; }
 .filter.active { color: white; background: #27212f; border-color: #27212f; }
 .filter span { margin-left: 8px; font-size: 12px; }
 .sr-only { color: #756e80; font-size: 12px; line-height: 16px; margin-bottom: 32px; }
 .posts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 32px; }
-.post-cover { display: block; position: relative; height: 288px; overflow: hidden; border-radius: 16px; }
+.post-cover { display: block; position: relative; height: 288px; overflow: hidden; border-radius: 0; }
 .post-cover img { width: 100%; }
 .cover-small { position: absolute; top: 24px; left: 24px; font-size: 12px; letter-spacing: 1px; }
 .cover-number { position: absolute; bottom: 24px; right: 24px; font-size: 14px; }
 .cover-intro { background: #e5d8f9; color: #6537b2; }
 .cover-hello { position: absolute; left: 32px; top: 64px; font-size: 60px; line-height: 1; letter-spacing: -2px; }
 .cover-hello > span { color: #ff855b; }
-.cover-sticker { position: absolute; bottom: 40px; left: 32px; padding: 8px 16px; border-radius: 4px; background: #fff8e2; color: #785442; font-size: 14px; }
+.cover-sticker { position: absolute; bottom: 40px; left: 32px; padding: 8px 16px; border-radius: 0; background: #fff8e2; color: #785442; font-size: 14px; }
 .cover-climb { background: #e9e6dd; color: #574a54; }
 .cover-game { background: #7545db; color: white; }
 .cover-tech { background: #e1ece6; color: #376756; }
@@ -90,7 +90,7 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
 .tagline-section .wrap { position: relative; }
 .tagline { position: relative; z-index: 1; max-width: 720px; margin-top: 24px; font-size: 48px; line-height: 1.1; letter-spacing: -1px; }
 .tagline-star { position: absolute; top: 0; right: 32px; color: #bda3eb; font-size: 128px; line-height: 1; }
-.interest-list { border: 1px solid #e4deed; border-radius: 16px; overflow: hidden; background: white; }
+.interest-list { border: 1px solid #e4deed; border-radius: 0; overflow: hidden; background: white; }
 .interest-list > a { display: grid; grid-template-columns: 40px 1fr 1.2fr 24px; gap: 24px; padding: 24px 32px; align-items: center; }
 .interest-list > a:hover { background: #ede6fa; }
 .interest-index { font-size: 12px; color: #756e80; }
@@ -98,7 +98,7 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
 .interest-list p { font-size: 14px; color: #756e80; }
 .interest-list > a > span:last-child { font-size: 24px; color: #7545db; }
 .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: center; }
-.about-portrait { position: relative; height: 400px; border-radius: 24px; background: #cbb2ef; color: #5f309e; display: flex; align-items: center; justify-content: center; }
+.about-portrait { position: relative; height: 400px; border-radius: 0; background: #cbb2ef; color: #5f309e; display: flex; align-items: center; justify-content: center; }
 .portrait-kicker { position: absolute; top: 32px; left: 32px; font-size: 12px; }
 .portrait-letter { font-size: 128px; line-height: 1; letter-spacing: -8px; }
 .portrait-bottom { position: absolute; left: 32px; right: 32px; bottom: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
@@ -107,7 +107,7 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
 .about-copy > p:not(.eyebrow) { margin-top: 24px; color: #756e80; }
 .text-link { display: inline-block; margin-top: 24px; color: #7545db; font-size: 14px; font-weight: bold; }
 .text-link span { margin-left: 24px; }
-.closing { display: flex; flex-wrap: wrap; align-items: center; gap: 32px; margin-top: 32px; margin-bottom: 64px; padding: 32px; background: #eee7fa; border: 1px solid #e2d7f5; border-radius: 24px; }
+.closing { display: flex; flex-wrap: wrap; align-items: center; gap: 32px; margin-top: 32px; margin-bottom: 64px; padding: 32px; background: #eee7fa; border: 1px solid #e2d7f5; border-radius: 0; }
 .closing > span { color: #7545db; font-size: 60px; line-height: 1; }
 .closing > div { flex: 1; }
 .closing h2 { margin-top: 8px; font-size: 24px; line-height: 32px; }
@@ -116,11 +116,11 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
 .site-info p { margin-top: 16px; }
 .site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding: 32px 0; font-size: 12px; color: #756e80; }
 .site-footer .brand { font-size: 14px; color: #27212f; }
-.site-footer .brand-mark { width: 32px; height: 32px; font-size: 24px; line-height: 28px; border-radius: 8px; }
+.site-footer .brand-mark { width: 32px; height: 32px; font-size: 24px; line-height: 28px; border-radius: 0; }
 .site-footer > div { display: flex; flex-wrap: wrap; gap: 16px; }
 
 /* Л13–Л14: простая карусель с переключением display. */
-.carousel { display: grid; grid-template-columns: 1.3fr 1fr; background: white; border: 1px solid #e4deed; border-radius: 24px; overflow: hidden; }
+.carousel { display: grid; grid-template-columns: 1.3fr 1fr; background: white; border: 1px solid #e4deed; border-radius: 0; overflow: hidden; }
 .slides { background: #eee8fa; }
 .slide { display: none; padding: 16px; }
 .slide:first-child { display: block; }
@@ -130,7 +130,7 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
 .carousel-copy h3 { margin-top: 16px; font-size: 30px; line-height: 36px; font-weight: 600; }
 .carousel-copy > p:not(.eyebrow) { margin-top: 16px; color: #756e80; }
 .carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 32px; }
-.carousel-controls button { width: 40px; height: 40px; border: 1px solid #e4deed; border-radius: 50%; background: #f8f7fc; color: #7545db; font-size: 20px; }
+.carousel-controls button { width: 40px; height: 40px; border: 1px solid #e4deed; border-radius: 0; background: #f6f6f6; color: #7545db; font-size: 20px; }
 .carousel-controls button:hover { background: #eae1fa; }
 #slide-count { font-size: 14px; color: #756e80; }
 
@@ -141,17 +141,17 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
 .page-intro { max-width: 680px; margin-top: 24px; color: #756e80; font-size: 18px; line-height: 28px; }
 .page-hero > .primary-button { margin-top: 32px; }
 .interest-cards, .two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.interest-card { background: white; border: 1px solid #e4deed; border-radius: 24px; overflow: hidden; }
+.interest-card { background: white; border: 1px solid #e4deed; border-radius: 0; overflow: hidden; }
 .interest-card > img { width: 100%; }
 .interest-card > div { padding: 32px; }
 .interest-card h2 { margin-top: 12px; font-size: 30px; line-height: 36px; }
 .interest-card p:not(.eyebrow) { margin-top: 16px; color: #756e80; }
 .interest-card p.card-note { font-size: 14px; color: #7545db; }
 .workshop-lead, .favorite-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.workshop-main-image { border-radius: 24px; }
+.workshop-main-image { border-radius: 0; }
 .workshop-lead h2, .favorite-copy h2 { margin-top: 16px; }
 .workshop-lead p:not(.eyebrow), .favorite-copy p:not(.eyebrow) { margin-top: 24px; color: #756e80; }
-.text-card { padding: 32px; border: 1px solid #e4deed; border-radius: 16px; background: white; }
+.text-card { padding: 32px; border: 1px solid #e4deed; border-radius: 0; background: white; }
 .card-index { font-size: 12px; color: #7545db; }
 .text-card h3 { margin-top: 24px; font-size: 24px; line-height: 32px; font-weight: 600; }
 .text-card p { margin-top: 16px; color: #756e80; }
@@ -160,14 +160,14 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
 .workshop-note { max-width: 760px; }
 .workshop-note h2 { margin-top: 24px; font-size: 48px; line-height: 1.1; }
 .workshop-note > p:not(.eyebrow) { margin-top: 24px; color: #756e80; font-size: 18px; line-height: 28px; }
-.favorite-art { position: relative; height: 480px; padding: 32px; overflow: hidden; border-radius: 24px; background: #7545db; color: white; }
+.favorite-art { position: relative; height: 480px; padding: 32px; overflow: hidden; border-radius: 0; background: #7545db; color: white; }
 .favorite-art > .eyebrow { color: #e1cef9; }
 .violet-orbit { display: flex; justify-content: center; align-items: center; height: 320px; }
 .violet-orbit > span { display: none; }
 .violet-orbit b { color: #e8d5ff; font-size: 128px; font-weight: normal; line-height: 1; }
 .favorite-art-footer { position: absolute; left: 32px; right: 32px; bottom: 32px; display: flex; justify-content: space-between; font-size: 12px; letter-spacing: 1px; color: #e1cef9; }
 .palette-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
-.palette-card { padding: 16px; background: white; border: 1px solid #e4deed; border-radius: 16px; }
+.palette-card { padding: 16px; background: white; border: 1px solid #e4deed; border-radius: 0; }
 .palette-card > div { height: 160px; }
 .palette-card h3 { margin-top: 24px; font-size: 18px; line-height: 28px; }
 .palette-card p { margin-top: 8px; color: #756e80; font-size: 14px; }
@@ -180,12 +180,12 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
 .recommendation-intro p { max-width: 680px; color: #756e80; }
 .recommendation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px 32px; }
 .recommendation-card { min-width: 0; }
-.recommendation-card > img { width: 100%; border-radius: 16px; }
+.recommendation-card > img { width: 100%; border-radius: 0; }
 .recommendation-card .eyebrow { margin-top: 24px; }
 .recommendation-card h3 { margin-top: 8px; font-size: 24px; line-height: 32px; font-weight: 600; }
 .recommendation-card p:not(.eyebrow) { margin-top: 16px; font-size: 14px; line-height: 20px; color: #756e80; }
 .recommendation-card p.recommendation-author { margin-top: 8px; color: #7545db; font-size: 12px; }
-.recommendation-reason { padding: 16px; border-radius: 8px; background: #eee8fa; }
+.recommendation-reason { padding: 16px; border-radius: 0; background: #eee8fa; }
 .recommendation-reason strong { color: #5b4080; }
 .recommendation-sources { margin-top: 40px; font-size: 12px; color: #756e80; }
 .recommendation-sources a { color: #7545db; text-decoration: underline; }
@@ -200,10 +200,10 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
 .game-intro > p:not(.eyebrow), .game-intro ol { margin-top: 24px; color: #736383; }
 .game-intro ol { padding-left: 24px; }
 .game-intro li { margin-top: 12px; }
-.game-panel { padding: 24px; border: 1px solid #e2d7f5; border-radius: 24px; background: white; }
+.game-panel { padding: 24px; border: 1px solid #e2d7f5; border-radius: 0; background: white; }
 .game-stats { display: flex; justify-content: space-between; align-items: center; color: #756e80; }
 .game-stats strong { color: #7545db; font-size: 30px; }
-.game-field { position: relative; width: 100%; height: 240px; margin-top: 16px; background: #f8f7fc; border: 1px solid #e4deed; border-radius: 8px; overflow: hidden; }
+.game-field { position: relative; width: 100%; height: 240px; margin-top: 16px; background: #f6f6f6; border: 1px solid #e4deed; border-radius: 0; overflow: hidden; }
 .game-sky-label { position: absolute; top: 24px; left: 16px; color: #aa97c4; font-size: 12px; }
 .game-ground { position: absolute; top: 220px; left: 0; width: 100%; height: 2px; background: #c5aedf; }
 #dino { position: absolute; top: 180px; left: 40px; width: 40px; height: 40px; background-image: url('../img/dino.png'); background-size: 40px 40px; }
@@ -240,7 +240,7 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
 
 @media screen and (max-width: 800px) {
   #menu-button { display: block; }
-  .main-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; padding: 112px 32px 32px; background: #f8f7fc; z-index: 20; flex-direction: column; align-items: flex-start; gap: 24px; overflow: auto; }
+  .main-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; padding: 112px 32px 32px; background: #f6f6f6; z-index: 20; flex-direction: column; align-items: flex-start; gap: 24px; overflow: auto; }
   .main-menu.open { display: flex; }
   .main-menu a { font-size: 24px; line-height: 32px; }
   .site-header { margin-top: 16px; padding: 12px 16px; }
@@ -293,10 +293,45 @@ h1 { max-width: 680px; margin-top: 24px; font-size: 60px; line-height: 1.05; fon
   .slide img { height: 200px; }
   .slide p { font-size: 12px; }
   .carousel-copy h3 { font-size: 24px; line-height: 32px; }
-  .game-panel { padding: 16px; border-radius: 16px; }
+  .game-panel { padding: 16px; border-radius: 0; }
   .game-intro > p:not(.eyebrow), .game-intro ol { margin-top: 16px; }
   .text-card { padding: 24px; }
   .workshop-note > p:not(.eyebrow) { font-size: 16px; line-height: 24px; }
   .site-footer > div { width: 100%; }
   .film-count { font-size: 12px; }
 }
+
+
+/* Прямые края и контрастные рамки. Обычные свойства CSS из Л2–Л4. */
+.site-header { border: 2px solid #27212f; background: white; }
+.hero-visual { padding: 0; border: 2px solid #27212f; background: white; }
+.hero-visual img { margin: 0; }
+.visual-label { padding: 12px 16px; background: #27212f; color: white; }
+.visual-caption { margin: 0; padding: 16px; color: #27212f; }
+.post-cover, .interest-card, .carousel, .text-card, .palette-card, .game-panel { border: 1px solid #27212f; }
+.post-cover { background: white; }
+.cover-intro { background: #7545db; color: white; }
+.cover-hello > span { color: white; }
+.cover-sticker { background: white; color: #27212f; }
+.tagline-section { background: #7545db; color: white; }
+.tagline-section .eyebrow { color: #eee8fa; }
+.tagline { font-weight: bold; }
+.tagline-star { display: none; }
+.about-portrait { border: 2px solid #27212f; background: white; color: #7545db; }
+.closing { border: 2px solid #27212f; background: white; }
+.closing > span { display: none; }
+.favorite-art { border: 2px solid #27212f; }
+.favorite-color-value { margin-top: 96px; color: white; font-size: 48px; line-height: 1; letter-spacing: -2px; }
+.recommendation-card > img { border: 1px solid #27212f; background: #eee; }
+.recommendation-reason { background: white; border: 1px solid #d2ccd9; }
+.game-field { background: #f6f6f6; }
+
+.cover-small { padding: 4px 8px; background: #27212f; color: white; }
+.cover-number { padding: 4px 8px; background: white; color: #27212f; border: 1px solid #27212f; }
+.favorite-art { height: auto; padding: 24px; }
+.favorite-art img { width: 100%; margin-top: 16px; }
+.favorite-color-value { margin-top: 24px; font-size: 36px; line-height: 40px; }
+.favorite-art-footer { position: static; margin-top: 24px; }
+.credits-list { padding-left: 24px; color: #756e80; }
+.credits-list li { margin: 24px 0; }
+.credits-list a { color: #7545db; text-decoration: underline; }
