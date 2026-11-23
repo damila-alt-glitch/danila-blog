@@ -1,70 +1,83 @@
-// Л15: «Динозаврик и кактус».
-// Движение задаётся CSS-анимацией. JavaScript запускает прыжок,
-// проверяет столкновение и показывает результат.
-var dino = document.getElementById('dino');
-var cactus = document.getElementById('cactus');
-var scoreText = document.getElementById('game-score');
-var statusText = document.getElementById('game-status');
-var startButton = document.getElementById('game-start');
-var gameRunning = false;
-var gameTimer;
-var jumpTimer;
-var startTimer;
-var score = 0;
+const dino = document.getElementById("dino");
+const cactus = document.getElementById("cactus");
+const scoreText = document.getElementById("score");
+const message = document.getElementById("message");
+const startButton = document.getElementById("start");
+const restartButton = document.getElementById("restart");
+const jumpButton = document.getElementById("jump-button");
+
+let playing = false;
+let score = 0;
+let passed = false;
+let jumpTimer;
 
 function startGame() {
-  // Л14–Л15: отмена старых таймеров нужна для корректного перезапуска.
-  clearInterval(gameTimer);
+  playing = false;
   clearTimeout(jumpTimer);
-  clearTimeout(startTimer);
-  gameRunning = false;
-  cactus.classList.remove('running');
-  dino.classList.remove('jump');
-  cactus.style.left = '100%';
+  dino.classList.remove("jump");
+  cactus.classList.remove("moving");
+  dino.style.top = "";
+  cactus.style.left = "";
   score = 0;
-  scoreText.innerHTML = score;
-  statusText.innerHTML = 'Перепрыгивай кактус. Удачной игры.';
-  startButton.innerHTML = 'Начать заново ↗';
-
-  startTimer = setTimeout(function () {
-    cactus.classList.add('running');
-    gameRunning = true;
-    gameTimer = setInterval(checkGame, 20);
-  }, 20);
+  passed = false;
+  scoreText.textContent = score;
+  message.textContent = "Прыгай через кактус";
+  void cactus.offsetWidth;
+  cactus.classList.add("moving");
+  playing = true;
+  startButton.disabled = true;
+  restartButton.disabled = false;
+  jumpButton.disabled = false;
 }
-
 function jump() {
-  if (gameRunning && !dino.classList.contains('jump')) {
-    dino.classList.add('jump');
-    jumpTimer = setTimeout(function () {
-      dino.classList.remove('jump');
-    }, 900);
+  if (!playing || dino.classList.contains("jump")) {
+    return;
   }
+  dino.classList.add("jump");
+  jumpTimer = setTimeout(function () {
+    dino.classList.remove("jump");
+  }, 1200);
 }
 
-// Л15: обработчик нажатия клавиши и вызов jump().
-document.addEventListener('keydown', function () {
-  jump();
+startButton.addEventListener("click", startGame);
+restartButton.addEventListener("click", startGame);
+jumpButton.addEventListener("click", jump);
+
+document.addEventListener("keydown", function (event) {
+  if (playing && (event.code === "Space" || event.code === "ArrowUp")) {
+    event.preventDefault();
+    if (!event.repeat) {
+      jump();
+    }
+  }
 });
-
-function checkGame() {
-  // Л15: координаты элементов через getComputedStyle и parseInt.
-  var dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue('top'));
-  var cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue('left'));
-
-  // Динозаврик: left = 40, ширина = 40, высота = 40.
-  // Кактус: ширина = 28, верхняя граница = 175.
-  if (cactusLeft < 80 && cactusLeft + 28 > 40 && dinoTop + 40 > 175) {
-    gameRunning = false;
-    clearInterval(gameTimer);
-    clearTimeout(jumpTimer);
-    cactus.style.left = cactusLeft + 'px';
-    cactus.classList.remove('running');
-    dino.classList.remove('jump');
-    statusText.innerHTML = 'Игра окончена. Твой счёт: ' + score + '. Попробуй ещё раз.';
-    startButton.innerHTML = 'Сыграть ещё раз ↗';
-  } else {
-    score++;
-    scoreText.innerHTML = score;
+setInterval(function () {
+  if (!playing) {
+    return;
   }
-}
+
+  let dinoTop = parseFloat(window.getComputedStyle(dino).top);
+  let cactusLeft = parseFloat(window.getComputedStyle(cactus).left);
+
+  if (cactusLeft < 80 && cactusLeft + 40 > 30 && dinoTop + 50 > 160) {
+    playing = false;
+    clearTimeout(jumpTimer);
+    cactus.classList.remove("moving");
+    cactus.style.left = cactusLeft + "px";
+    dino.classList.remove("jump");
+    dino.style.top = dinoTop + "px";
+    message.textContent = "GAME OVER!";
+    jumpButton.disabled = true;
+    return;
+  }
+
+
+  if (cactusLeft + 40 < 30 && !passed) {
+    score++;
+    scoreText.textContent = score;
+    passed = true;
+  }
+  if (cactusLeft > 80) {
+    passed = false;
+  }
+}, 10);
