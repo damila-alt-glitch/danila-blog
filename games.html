@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мои игры — Игры и книги</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Игры и книги</h1>
+  </div>
+  <div class="menu">
+    <a href="index.html">Главная</a>
+    <a class="active" href="games.html">Мои игры</a>
+    <a href="books.html">Мои книги</a>
+    <a href="gallery.html">Галерея</a>
+    <a href="about.html">О блоге</a>
+  </div>
+  <div class="content">
+    <h2>Мои игры</h2>
+    <p>Это мои любимые игры</p>
+    <div class="mini-game">
+      <h3>Мини-игра «Динозаврик»</h3>
+      <p>Перепрыгивай через кактус — пробел, стрелка вверх или кнопка «Прыжок»</p>
+      <p>Очки: <span id="score">0</span></p>
+      <div id="game" aria-label="Игровое поле">
+        <div id="dino" role="img" aria-label="Динозаврик">🦖</div>
+        <div id="cactus" role="img" aria-label="Кактус">🌵</div>
+      </div>
+      <p id="message" role="status">Нажми «Начать игру»</p>
+      <button id="start" type="button">Начать игру</button>
+      <button id="restart" type="button" disabled>Начать заново</button>
+      <button id="jump-button" type="button" disabled>Прыжок</button>
+      <p class="hint">За каждый пройденный кактус даётся 1 очко</p>
+    </div>
+    <div class="cards">
+      <div class="card game-card">
+        <h3>9 Kings</h3>
+        <img src="img/game-2784470.jpg" alt="Обложка игры 9 Kings">
+      </div>
+      <div class="card game-card">
+        <h3>Queen’s Domain</h3>
+        <img src="img/game-1799840.jpg" alt="Обложка игры Queen’s Domain">
+      </div>
+      <div class="card game-card">
+        <h3>Total War: SHOGUN 2</h3>
+        <img src="img/game-201270.jpg" alt="Обложка игры Total War: SHOGUN 2">
+      </div>
+      <div class="card game-card">
+        <h3>Age of Wonders 4</h3>
+        <img src="img/game-1669000.jpg" alt="Обложка игры Age of Wonders 4">
+      </div>
+      <div class="card game-card">
+        <h3>Pit of Goblin</h3>
+        <img src="img/game-3253530.jpg" alt="Обложка игры Pit of Goblin">
+      </div>
+      <div class="card game-card">
+        <h3>Total War: WARHAMMER III</h3>
+        <img src="img/game-1142710.jpg" alt="Обложка игры Total War: WARHAMMER III">
+      </div>
+      <div class="card game-card">
+        <h3>Battlefield 6</h3>
+        <img src="img/game-2807960.jpg" alt="Обложка игры Battlefield 6">
+      </div>
+      <div class="card game-card">
+        <h3>Guild Wars 2</h3>
+        <img src="img/game-1284210.jpg" alt="Обложка игры Guild Wars 2">
+      </div>
+      <div class="card game-card">
+        <h3>Tenebris: Terra Incognita</h3>
+        <img src="img/game-2280060.jpg" alt="Обложка игры Tenebris: Terra Incognita">
+      </div>
+      <div class="card game-card">
+        <h3>Ready or Not</h3>
+        <img src="img/game-1144200.jpg" alt="Обложка игры Ready or Not">
+      </div>
+      <div class="card game-card">
+        <h3>Corsair Cove</h3>
+        <img src="img/game-1368140.jpg" alt="Обложка игры Corsair Cove">
+      </div>
+      <div class="card game-card">
+        <h3>Warspear Online</h3>
+        <img src="img/game-326360.jpg" alt="Обложка игры Warspear Online">
+      </div>
+      <div class="card game-card">
+        <h3>MENACE</h3>
+        <img src="img/game-2432860.jpg" alt="Обложка игры MENACE">
+      </div>
+      <div class="card game-card">
+        <h3>Warhammer 40,000: Rogue Trader</h3>
+        <img src="img/game-2186680.jpg" alt="Обложка игры Warhammer 40,000: Rogue Trader">
+      </div>
+      <div class="card game-card">
+        <h3>Shadow of the Road Demo</h3>
+        <img src="img/game-3783770.jpg" alt="Обложка игры Shadow of the Road Demo">
+      </div>
+      <div class="card game-card">
+        <h3>VOIN</h3>
+        <img src="img/game-2464530.jpg" alt="Обложка игры VOIN">
+      </div>
+      <div class="card game-card">
+        <h3>Phantom Brigade</h3>
+        <img src="img/game-553540.jpg" alt="Обложка игры Phantom Brigade">
+      </div>
+      <div class="card game-card">
+        <h3>Anno 1800</h3>
+        <img src="img/game-916440.jpg" alt="Обложка игры Anno 1800">
+      </div>
+      <div class="card game-card">
+        <h3>Invisible, Inc</h3>
+        <img src="img/game-243970.jpg" alt="Обложка игры Invisible, Inc">
+      </div>
+      <div class="card game-card">
+        <h3>King’s Bounty: Перекрёстки миров</h3>
+        <img src="img/game-63910.jpg" alt="Обложка игры King’s Bounty: Перекрёстки миров">
+      </div>
+      <div class="card game-card">
+        <h3>King’s Bounty: Принцесса в доспехах</h3>
+        <img src="img/game-3170.jpg" alt="Обложка игры King’s Bounty: Принцесса в доспехах">
+      </div>
+      <div class="card game-card">
+        <h3>War of Dots</h3>
+        <img src="img/game-3902430.jpg" alt="Обложка игры War of Dots">
+      </div>
+      <div class="card game-card">
+        <h3>Warhammer 40,000: Mechanicus</h3>
+        <img src="img/game-673880.jpg" alt="Обложка игры Warhammer 40,000: Mechanicus">
+      </div>
+      <div class="card game-card">
+        <h3>Warhammer 40,000: Gladius</h3>
+        <img src="img/game-489630.jpg" alt="Обложка игры Warhammer 40,000: Gladius">
+      </div>
+      <div class="card game-card">
+        <h3>Rogue Command</h3>
+        <img src="img/game-1461910.jpg" alt="Обложка игры Rogue Command">
+      </div>
+      <div class="card game-card">
+        <h3>Warhammer 40,000: Dawn of War</h3>
+        <img src="img/game-4570.jpg" alt="Обложка игры Warhammer 40,000: Dawn of War">
+      </div>
+      <div class="card game-card">
+        <h3>Path of Exile 2</h3>
+        <img src="img/game-2694490.jpg" alt="Обложка игры Path of Exile 2">
+      </div>
+      <div class="card game-card">
+        <h3>Star Wars Outlaws</h3>
+        <img src="img/game-2842040.jpg" alt="Обложка игры Star Wars Outlaws">
+      </div>
+      <div class="card game-card">
+        <h3>Conan Exiles Enhanced</h3>
+        <img src="img/game-440900.jpg" alt="Обложка игры Conan Exiles Enhanced">
+      </div>
+      <div class="card game-card">
+        <h3>The Elder Scrolls Online</h3>
+        <img src="img/game-306130.jpg" alt="Обложка игры The Elder Scrolls Online">
+      </div>
+      <div class="card game-card">
+        <h3>Pathfinder: Kingmaker</h3>
+        <img src="img/game-640820.jpg" alt="Обложка игры Pathfinder: Kingmaker">
+      </div>
+      <div class="card game-card">
+        <h3>Dead Cells</h3>
+        <img src="img/game-588650.jpg" alt="Обложка игры Dead Cells">
+      </div>
+      <div class="card game-card">
+        <h3>Warhammer 40,000: Space Marine</h3>
+        <img src="img/game-55150.jpg" alt="Обложка игры Warhammer 40,000: Space Marine">
+      </div>
+      <div class="card game-card">
+        <h3>Shape of Dreams</h3>
+        <img src="img/game-2444750.jpg" alt="Обложка игры Shape of Dreams">
+      </div>
+      <div class="card game-card">
+        <h3>The Witcher: Enhanced Edition</h3>
+        <img src="img/game-20900.jpg" alt="Обложка игры The Witcher: Enhanced Edition">
+      </div>
+      <div class="card game-card">
+        <h3>Wasteland 3</h3>
+        <img src="img/game-719040.jpg" alt="Обложка игры Wasteland 3">
+      </div>
+      <div class="card game-card">
+        <h3>Age of Mythology: Retold</h3>
+        <img src="img/game-1934680.jpg" alt="Обложка игры Age of Mythology: Retold">
+      </div>
+      <div class="card game-card">
+        <h3>From Glory To Goo</h3>
+        <img src="img/game-2607060.jpg" alt="Обложка игры From Glory To Goo">
+      </div>
+      <div class="card game-card">
+        <h3>Manor Lords</h3>
+        <img src="img/game-1363080.jpg" alt="Обложка игры Manor Lords">
+      </div>
+      <div class="card game-card">
+        <h3>Warhammer 40,000: Darktide</h3>
+        <img src="img/game-1361210.jpg" alt="Обложка игры Warhammer 40,000: Darktide">
+      </div>
+      <div class="card game-card">
+        <h3>Dragon Age: Инквизиция</h3>
+        <img src="img/game-1222690.jpg" alt="Обложка игры Dragon Age: Инквизиция">
+      </div>
+      <div class="card game-card">
+        <h3>Encased</h3>
+        <img src="img/game-921800.jpg" alt="Обложка игры Encased">
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>Мой блог об играх и книгах</p>
+  </div>
+  <script src="js/game.js"></script>
+</body>
+</html>
